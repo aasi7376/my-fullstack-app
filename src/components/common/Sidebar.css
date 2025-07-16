@@ -1,0 +1,678 @@
+/* Sidebar Styles */
+.sidebar {
+  background: rgba(15, 15, 35, 0.95);
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+.sidebar.expanded {
+  width: 280px;
+  min-width: 280px;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+  min-width: 70px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.sidebar-logo {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(45deg, #00ff88, #00a8ff);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #0f0f23;
+  font-size: 18px;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00ff88, #00a8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.sidebar-close-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation Section */
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.nav-section {
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.nav-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.nav-item-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+}
+
+.nav-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-badge {
+  background: #ff6b9d;
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.active-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #00ff88;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.online {
+  background: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.status-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-icon {
+  font-size: 1.2rem;
+}
+
+.footer-text {
+  font-size: 0.8rem;
+}
+
+.footer-content-collapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-button-small {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: rgba(15, 15, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #00a8ff;
+  font-size: 0.8rem;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+/* Mobile Menu */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+}
+
+.mobile-menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  background: rgba(15, 15, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.5rem;
+  z-index: 998;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    z-index: 1001;
+  }
+  
+  .sidebar.expanded {
+    left: 0;
+  }
+  
+  .sidebar-toggle {
+    display: none;
+  }
+}
+/* Enhanced Cyberpunk Effects for Your Existing Sidebar */
+
+/* Improved gradient backgrounds */
+.sidebar {
+  background: linear-gradient(135deg, 
+    rgba(15, 15, 35, 0.95) 0%, 
+    rgba(10, 10, 25, 0.98) 100%
+  ) !important;
+  box-shadow: 
+    0 0 30px rgba(0, 0, 0, 0.7), 
+    0 0 50px rgba(0, 255, 136, 0.15),
+    inset 0 0 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Enhanced logo glow effect */
+.sidebar-header div[style*="background: linear-gradient"] {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 0.8), 
+    0 0 30px rgba(0, 255, 136, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.7) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-header div[style*="background: linear-gradient"]::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    transparent, 
+    transparent, 
+    transparent, 
+    rgba(255, 255, 255, 0.2)
+  );
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  from {
+    transform: rotate(30deg) translateX(-100%);
+  }
+  to {
+    transform: rotate(30deg) translateX(100%);
+  }
+}
+
+/* Enhanced border glow for active items */
+.sidebar-item.active {
+  border: 1px solid rgba(0, 255, 136, 0.5) !important;
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.3), 
+    0 0 20px rgba(0, 255, 136, 0.2),
+    inset 0 0 10px rgba(0, 255, 136, 0.05) !important;
+}
+
+/* Enhanced hover effect for items */
+.sidebar-item:hover {
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 136, 0.15) 0%, 
+    rgba(0, 168, 255, 0.05) 100%
+  ) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+  transform: translateX(8px) scale(1.02) !important;
+}
+
+/* Enhanced active indicator */
+.sidebar-item.active div[style*="position: absolute"][style*="left: 0"] {
+  background: linear-gradient(to bottom, #00ff88, #00ccff) !important;
+  box-shadow: 
+    0 0 10px #00ff88, 
+    0 0 15px rgba(0, 255, 136, 0.7) !important;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    opacity: 0.7;
+    box-shadow: 
+      0 0 8px #00ff88, 
+      0 0 12px rgba(0, 255, 136, 0.5);
+  }
+  to {
+    opacity: 1;
+    box-shadow: 
+      0 0 12px #00ff88, 
+      0 0 20px rgba(0, 255, 136, 0.8);
+  }
+}
+
+/* Enhanced icon glow for active and hovered items */
+.sidebar-item.active div[style*="font-size"][style*="color: #00ff88"] {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8) !important;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.8)) !important;
+  animation: iconPulse 2s infinite alternate;
+}
+
+.sidebar-item:hover div[style*="font-size"] {
+  color: #00ff88 !important;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.6)) !important;
+}
+
+@keyframes iconPulse {
+  from {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.6));
+  }
+  to {
+    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.9));
+  }
+}
+
+/* Enhanced text shadow for labels */
+.sidebar-item.active span[style*="color: #00ff88"] {
+  text-shadow: 
+    0 0 10px rgba(0, 255, 136, 0.7),
+    0 0 20px rgba(0, 255, 136, 0.4) !important;
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced logout button */
+button[style*="background: linear-gradient"][style*="border: 1px solid rgba(0, 255, 136, 0.3)"] {
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 136, 0.25), 
+    rgba(0, 168, 255, 0.15)
+  ) !important;
+  border: 1px solid rgba(0, 255, 136, 0.4) !important;
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 255, 136, 0.1),
+    inset 0 0 10px rgba(0, 255, 136, 0.05) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+button[style*="background: linear-gradient"][style*="border: 1px solid rgba(0, 255, 136, 0.3)"]::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    transparent, 
+    transparent, 
+    transparent, 
+    rgba(0, 255, 136, 0.2)
+  );
+  transform: rotate(30deg);
+  animation: buttonShimmer 3s infinite linear;
+}
+
+button[style*="background: linear-gradient"][style*="border: 1px solid rgba(0, 255, 136, 0.3)"]:hover {
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 136, 0.35), 
+    rgba(0, 168, 255, 0.25)
+  ) !important;
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 255, 136, 0.2) !important;
+}
+
+@keyframes buttonShimmer {
+  from {
+    transform: rotate(30deg) translateX(-100%);
+  }
+  to {
+    transform: rotate(30deg) translateX(100%);
+  }
+}
+
+/* Enhanced toggle button */
+button[style*="position: absolute"][style*="top: '20px'"][style*="right:"] {
+  background: linear-gradient(135deg, #00ff9d, #00a8ff) !important;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 136, 0.8), 
+    0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+button[style*="position: absolute"][style*="top: '20px'"][style*="right:"]:hover {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 1), 
+    0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Enhanced floating particles */
+div[style*="position: absolute"][style*="top: 0"][style*="overflow: hidden"] div[style*="position: absolute"][style*="width: '4px'"] {
+  box-shadow: 0 0 15px currentColor !important;
+  opacity: 0.8 !important;
+  filter: blur(1px);
+}
+
+/* Add more floating particles with different effects */
+div[style*="position: absolute"][style*="top: 0"][style*="overflow: hidden"]::before,
+div[style*="position: absolute"][style*="top: 0"][style*="overflow: hidden"]::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #00ccff;
+  box-shadow: 0 0 15px #00ccff;
+  animation: floatParticle 15s infinite linear;
+  opacity: 0.5;
+}
+
+div[style*="position: absolute"][style*="top: 0"][style*="overflow: hidden"]::before {
+  top: 25%;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+div[style*="position: absolute"][style*="top: 0"][style*="overflow: hidden"]::after {
+  top: 75%;
+  left: 70%;
+  animation-delay: 5s;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-100px) translateX(50px);
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-300px) translateX(0);
+    opacity: 0;
+  }
+}
+
+/* Add a subtle animated grid background to sidebar */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+  z-index: -1;
+  opacity: 0.2;
+  animation: gridMove 40s infinite linear;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* Add a scanline effect */
+.sidebar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.1;
+  animation: scanline 10s infinite linear;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+/* Enhance user avatar */
+div[style*="background: linear-gradient(135deg, #00a8ff, #00ff88)"] {
+  position: relative;
+  overflow: hidden;
+}
+
+div[style*="background: linear-gradient(135deg, #00a8ff, #00ff88)"]::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    transparent, 
+    transparent, 
+    transparent, 
+    rgba(255, 255, 255, 0.3)
+  );
+  transform: rotate(30deg);
+  animation: avatarShimmer 3s infinite linear;
+}
+
+@keyframes avatarShimmer {
+  from {
+    transform: rotate(30deg) translateX(-100%);
+  }
+  to {
+    transform: rotate(30deg) translateX(100%);
+  }
+}
+
+/* Add glitch effect to sidebar title */
+h1[style*="background: linear-gradient(to right, #00ff88, #00ffcc)"] {
+  position: relative;
+  animation: textGlitch 5s infinite;
+}
+
+@keyframes textGlitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+  }
+  92% {
+    transform: translate(-2px, 1px);
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.7);
+  }
+  94% {
+    transform: translate(2px, -1px);
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+  }
+  96% {
+    transform: translate(-2px, -1px);
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.7);
+  }
+  98% {
+    transform: translate(2px, 1px);
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+  }
+}

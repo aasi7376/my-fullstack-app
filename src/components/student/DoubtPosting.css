@@ -1,0 +1,385 @@
+/* src/components/student/DoubtPosting.css */
+.doubt-posting-container {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  padding: 20px;
+  background-color: #121212;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.doubts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SECTION: Header Section Styling */
+.doubts-header-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 700;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.section-subtitle {
+  color: #00ffff;
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.doubts-count-section {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.count-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.count-number {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.count-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pending-count .count-number,
+.pending-count .count-label {
+  color: #ff1493; /* Pink */
+}
+
+.answered-count .count-number,
+.answered-count .count-label {
+  color: #00ffff; /* Cyan */
+}
+
+.ask-question-button {
+  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #00ffff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.ask-question-button:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* SECTION: Tips Section Styling */
+.tips-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+}
+
+.tips-header {
+  font-size: 1.5rem;
+  margin: 0 0 20px 0;
+  color: #00ffff;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+.tips-icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.tip-icon {
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.tip-text {
+  font-size: 1rem;
+}
+
+/* SECTION: Tabs Section Styling */
+.doubts-tabs-section {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.tab-button {
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: #888;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.tab-button:hover {
+  color: #00ffff;
+}
+
+.tab-button.active {
+  color: #00ffff;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+/* SECTION: Doubts List Styling */
+.doubts-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.doubt-card {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+.doubt-card:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  border-color: rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.pending-card {
+  border-left: 4px solid #ff1493;
+}
+
+.answered-card {
+  border-left: 4px solid #00ffff;
+}
+
+.doubt-question-section {
+  margin-bottom: 15px;
+}
+
+.doubt-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.doubt-meta-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.doubt-game {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.doubt-date {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.doubt-status {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.pending-status {
+  background-color: rgba(255, 20, 147, 0.2);
+  color: #ff1493;
+  border: 1px solid rgba(255, 20, 147, 0.5);
+}
+
+.answered-status {
+  background-color: rgba(0, 255, 255, 0.2);
+  color: #00ffff;
+  border: 1px solid rgba(0, 255, 255, 0.5);
+}
+
+.doubt-tags-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.doubt-tag {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  background-color: rgba(75, 75, 75, 0.5);
+  border-radius: 50px;
+  color: #ddd;
+}
+
+.doubt-answer-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(0, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #00ffff;
+}
+
+.answer-header {
+  margin-bottom: 10px;
+}
+
+.answered-by {
+  font-size: 0.9rem;
+  color: #00ffff;
+  font-weight: 500;
+}
+
+.answer-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #ddd;
+}
+
+.doubt-footer-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.doubt-action-button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  background-color: transparent;
+}
+
+.pending-action {
+  color: white;
+  border: 1.5px solid #ff1493;
+}
+
+.pending-action:hover {
+  background-color: rgba(255, 20, 147, 0.2);
+  box-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+}
+
+.answered-action {
+  color: white;
+  border: 1.5px solid #00ffff;
+}
+
+.answered-action:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .doubts-header-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .doubts-title-section {
+    flex: 1;
+  }
+  
+  .doubts-count-section {
+    margin: 0;
+  }
+  
+  .ask-question-button {
+    margin-top: 0;
+  }
+}
+
+/* Animation effects */
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+  }
+}
+
+.section-title, .tips-header {
+  animation: neonGlow 2s infinite;
+}

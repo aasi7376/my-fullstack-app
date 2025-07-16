@@ -1,0 +1,105 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Cyberpunk Neural Network Background
+   Enhances your dashboard with a dynamic neural network animation
+──────────────────────────────────────────────────────────────────────────── */
+
+/* Neural Network Background */
+.neural-network-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Neuron */
+.neuron {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff, 0 0 20px rgba(0, 230, 255, 0.3);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/* Synapse (connection) */
+.synapse {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+  opacity: 0.3;
+  z-index: 0;
+  transform-origin: 0 0;
+}
+
+/* Neural Pulse Animation */
+.pulse {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #b967ff;
+  opacity: 0;
+  z-index: 2;
+  box-shadow: 0 0 15px #b967ff, 0 0 30px rgba(185, 103, 255, 0.3);
+}
+
+/* Glow Spots for Depth */
+.glow-spot {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 230, 255, 0.15) 0%, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Fix for the jsx attribute error */
+[jsx] {
+  display: none;
+}
+
+/* Position adjustments for the student dashboard */
+.student-dashboard-container {
+  position: relative;
+  z-index: 1;
+}
+
+.student-sidebar {
+  position: relative;
+  z-index: 10;
+}
+
+.student-dashboard-content {
+  position: relative;
+  z-index: 5;
+}
+
+/* Animation for the pulses */
+@keyframes pulse-animation {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Make sure the student-dashboard-container always covers the full viewport */
+.student-dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+}

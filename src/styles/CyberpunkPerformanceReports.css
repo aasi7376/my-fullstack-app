@@ -1,0 +1,1122 @@
+/* CyberpunkPerformanceReports.css */
+/* Cyberpunk-themed styling for Performance Reports */
+
+/* Base styles with cyberpunk color scheme */
+.performance-reports {
+  background-color: #0f0f1a;
+  color: #e0e0ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2), 0 0 40px rgba(0, 168, 255, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  font-family: 'Rajdhani', 'Orbitron', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cyberpunk grid effect overlay */
+.performance-reports::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.performance-reports > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Dashboard header with neon effect */
+.dashboard-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.dashboard-title-icon {
+  margin-right: 0.75rem;
+  font-size: 1.75rem;
+}
+
+.dashboard-subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Report controls with neon buttons */
+.report-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(15, 15, 26, 0.7);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 168, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.15);
+}
+
+.report-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.report-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: rgba(30, 30, 50, 0.8);
+  border: 1px solid rgba(0, 168, 255, 0.3);
+  color: #94a3b8;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.report-type-btn:hover {
+  background-color: rgba(0, 168, 255, 0.1);
+  border-color: rgba(0, 168, 255, 0.5);
+  color: #fff;
+}
+
+.report-type-btn.active {
+  background-color: rgba(0, 168, 255, 0.2);
+  border: 1px solid #00a8ff;
+  color: #00a8ff;
+  box-shadow: 0 0 10px rgba(0, 168, 255, 0.4);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-range-select {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: rgba(30, 30, 50, 0.8);
+  border: 1px solid rgba(0, 168, 255, 0.3);
+  color: #94a3b8;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.date-range-select:focus {
+  outline: none;
+  border-color: #00a8ff;
+  box-shadow: 0 0 0 2px rgba(0, 168, 255, 0.3);
+}
+
+/* Neon buttons */
+.btn-neon {
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background-color: rgba(0, 255, 136, 0.1);
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.btn-secondary {
+  background-color: rgba(0, 168, 255, 0.1);
+  border: 1px solid #00a8ff;
+  color: #00a8ff;
+  box-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 168, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.5);
+}
+
+.btn-neon:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Export dropdown */
+.export-dropdown {
+  position: relative;
+}
+
+.export-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: rgba(20, 20, 35, 0.95);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+  width: 150px;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+  display: none;
+}
+
+.export-dropdown:hover .export-options {
+  display: block;
+}
+
+.export-options button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: #e0e0ff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-options button:hover {
+  background-color: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+}
+
+/* Report container */
+.report-container {
+  background-color: rgba(20, 20, 35, 0.7);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(140, 122, 230, 0.3);
+  box-shadow: 0 0 20px rgba(140, 122, 230, 0.15);
+}
+
+.report-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(140, 122, 230, 0.3);
+  padding-bottom: 0.75rem;
+}
+
+.report-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #8c7ae6;
+  text-shadow: 0 0 10px rgba(140, 122, 230, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.report-header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Chart containers */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-container {
+  background-color: rgba(15, 15, 26, 0.7);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(0, 168, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.1);
+}
+
+.chart-container.full-width {
+  grid-column: 1 / -1;
+}
+
+.chart-container h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #00a8ff;
+  text-shadow: 0 0 5px rgba(0, 168, 255, 0.5);
+}
+
+/* Custom tooltip for charts */
+.chart-tooltip {
+  background-color: rgba(20, 20, 35, 0.95);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+  padding: 0.75rem;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+  min-width: 150px;
+}
+
+.tooltip-header {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #e0e0ff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.25rem;
+}
+
+.tooltip-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.tooltip-label {
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.tooltip-value {
+  font-weight: 600;
+}
+
+/* Summary stats */
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  background-color: rgba(15, 15, 26, 0.7);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-info h4 {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00ff88;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+}
+
+.stat-period {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Tables */
+.performance-table, .attendance-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1.5rem;
+}
+
+.performance-table th, .attendance-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background-color: rgba(20, 20, 35, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.performance-table td, .attendance-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.performance-table tr:hover td, .attendance-table tr:hover td {
+  background-color: rgba(0, 255, 136, 0.05);
+}
+
+.score-badge {
+  background-color: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+}
+
+.improvement {
+  font-weight: 600;
+}
+
+.improvement.positive {
+  color: #00ff88;
+}
+
+.improvement.negative {
+  color: #ff6b6b;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.status-badge.excellent {
+  background-color: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.status-badge.good {
+  background-color: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.status-badge.needs-improvement {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Subject insights */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.insight-card {
+  background-color: rgba(15, 15, 26, 0.7);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(0, 168, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.1);
+}
+
+.insight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.insight-header h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0ff;
+}
+
+.score-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.insight-stats {
+  font-size: 0.85rem;
+}
+
+.stat-item {
+  margin: 0.25rem 0;
+  color: #94a3b8;
+}
+
+/* Teacher cards */
+.teacher-performance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.teacher-card {
+  background-color: rgba(15, 15, 26, 0.7);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 168, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.1);
+}
+
+.teacher-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.teacher-avatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 168, 255, 0.1);
+  border: 2px solid #00a8ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #00a8ff;
+  box-shadow: 0 0 10px rgba(0, 168, 255, 0.4);
+}
+
+.teacher-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e0e0ff;
+  margin-bottom: 0.25rem;
+}
+
+.teacher-info p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.teacher-metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00a8ff;
+  text-shadow: 0 0 5px rgba(0, 168, 255, 0.5);
+}
+
+.performance-indicator {
+  margin-top: 0.5rem;
+}
+
+.indicator-bar {
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.indicator-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Engagement metrics */
+.engagement-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.metric-card {
+  background-color: rgba(15, 15, 26, 0.7);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(140, 122, 230, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 15px rgba(140, 122, 230, 0.1);
+}
+
+.metric-icon {
+  font-size: 1.75rem;
+  color: #8c7ae6;
+  text-shadow: 0 0 10px rgba(140, 122, 230, 0.7);
+}
+
+.metric-info h4 {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #8c7ae6;
+  text-shadow: 0 0 5px rgba(140, 122, 230, 0.5);
+}
+
+.metric-change {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.metric-change.positive {
+  color: #00ff88;
+}
+
+.metric-change.negative {
+  color: #ff6b6b;
+}
+
+/* Attendance specific styles */
+.attendance-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background-color: rgba(15, 15, 26, 0.7);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e0e0ff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.attendance-circle {
+  position: relative;
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00ff88;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+}
+
+.attendance-breakdown {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: rgba(15, 15, 26, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 168, 255, 0.2);
+}
+
+.breakdown-label {
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.breakdown-value {
+  font-weight: 600;
+}
+
+.breakdown-value.present {
+  color: #00ff88;
+}
+
+.breakdown-value.absent {
+  color: #ff6b6b;
+}
+
+.breakdown-value.late {
+  color: #ffd700;
+}
+
+.attendance-rate {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.attendance-rate.excellent {
+  background-color: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+}
+
+.attendance-rate.good {
+  background-color: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+}
+
+.attendance-rate.poor {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+}
+
+.trend {
+  font-size: 1.25rem;
+}
+
+.trend.up {
+  color: #00ff88;
+}
+
+.trend.down {
+  color: #ff6b6b;
+}
+
+/* Add glitch effect to main title */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                0.05em 0 0 rgba(0, 255, 0, 0.75),
+                0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                0.05em 0 0 rgba(0, 255, 0, 0.75),
+                0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+                -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+.dashboard-title:hover {
+  animation: glitch 1s linear infinite;
+}
+
+/* Add cyberpunk scanlines effect */
+.performance-reports::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.05) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.3;
+}
+
+/* Add neon glow effect to buttons on hover */
+.report-type-btn:hover, .btn-neon:hover {
+  animation: neon-pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    box-shadow: 0 0 5px rgba(0, 168, 255, 0.5), 0 0 10px rgba(0, 168, 255, 0.3);
+  }
+  to {
+    box-shadow: 0 0 10px rgba(0, 168, 255, 0.8), 0 0 20px rgba(0, 168, 255, 0.5), 0 0 30px rgba(0, 168, 255, 0.3);
+  }
+}
+
+/* Flickering neon effect for important elements */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.6;
+  }
+}
+
+.dashboard-title, .report-header h3 {
+  animation: flicker 8s infinite alternate;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .report-controls {
+    flex-direction: column;
+  }
+  
+  .report-types {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .report-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .summary-stats, .engagement-metrics, .teacher-performance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add pulsing effect to data points */
+@keyframes data-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Custom scrollbar for cyberpunk feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 26, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 136, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 136, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* Add holographic effect to important elements */
+.holographic {
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+  animation: holographic 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes holographic {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add terminal typing effect for important text elements */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
+
+/* Add digital noise effect */
+.noise {
+  position: relative;
+}
+
+.noise::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Data visualization enhancements */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(0, 255, 136, 0.1) !important;
+}
+
+.recharts-tooltip-cursor {
+  stroke: rgba(0, 255, 136, 0.3) !important;
+}
+
+.recharts-default-tooltip {
+  background-color: rgba(20, 20, 35, 0.9) !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3) !important;
+}
+
+/* Add glowing effect to data points */
+.recharts-dot {
+  filter: drop-shadow(0 0 3px rgba(0, 255, 136, 0.7));
+}
+
+/* Add neon glow to lines in charts */
+.recharts-line-curve {
+  filter: drop-shadow(0 0 3px rgba(0, 255, 136, 0.5));
+}
+
+/* Data card hover effects */
+.stat-card:hover, 
+.metric-card:hover, 
+.insight-card:hover, 
+.teacher-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.15), 0 0 15px rgba(0, 168, 255, 0.1);
+}
+
+/* Add cyberpunk retro terminal font */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+.retro-terminal {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.5px;
+}
+
+/* Add neon border glow effect */
+.neon-border {
+  position: relative;
+}
+
+.neon-border::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid #00ff88;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3), inset 0 0 10px rgba(0, 255, 136, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.neon-border:hover::after {
+  opacity: 1;
+}
+
+/* Add circuit board pattern effect */
+.circuit-bg {
+  position: relative;
+}
+
+.circuit-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2300ff88' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Add cyberpunk-style badges and highlights */
+.cyber-badge {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 168, 255, 0.2));
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #00ff88;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-badge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Enhance focus elements with cyberpunk style */
+button:focus, select:focus, input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.5), 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Add futuristic loading spinner */
+.cyber-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 255, 136, 0.3);
+  border-top: 3px solid #00ff88;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: relative;
+}
+
+.cyber-spinner::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add tilt effect on important cards */
+.tilt-effect {
+  transition: transform 0.3s ease;
+}
+
+.tilt-effect:hover {
+  transform: perspective(500px) rotateX(5deg);
+}
+
+/* Final touches for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,398 @@
+/* CyberpunkBackgroundEffects.css */
+/* Dynamic background animations for the school dashboard */
+
+/* Base styling for the animated background container */
+.cyberpunk-animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Gradient mesh background */
+.gradient-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(168, 85, 247, 0.1), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.1), transparent 25%),
+    radial-gradient(circle at 75% 80%, rgba(16, 185, 129, 0.1), transparent 25%),
+    radial-gradient(circle at 30% 90%, rgba(245, 158, 11, 0.1), transparent 25%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  opacity: 1;
+  z-index: -10;
+}
+
+/* Grid pattern overlay */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -9;
+}
+
+/* Digital rain effect */
+.digital-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -8;
+}
+
+.rain-column {
+  position: absolute;
+  top: -100px;
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(to bottom, 
+    transparent,
+    rgba(0, 255, 136, 0.5), 
+    rgba(0, 255, 136, 0.2), 
+    transparent);
+  filter: blur(1px);
+  opacity: 0.5;
+  animation: rain-fall linear infinite;
+}
+
+@keyframes rain-fall {
+  to {
+    transform: translateY(calc(100vh + 100px));
+  }
+}
+
+/* Generate 20 rain columns with different positions and animation speeds */
+.rain-column:nth-child(1) { left: 5%; animation-duration: 5s; }
+.rain-column:nth-child(2) { left: 10%; animation-duration: 7s; }
+.rain-column:nth-child(3) { left: 15%; animation-duration: 6s; }
+.rain-column:nth-child(4) { left: 20%; animation-duration: 8s; }
+.rain-column:nth-child(5) { left: 25%; animation-duration: 5.5s; }
+.rain-column:nth-child(6) { left: 30%; animation-duration: 7.5s; }
+.rain-column:nth-child(7) { left: 35%; animation-duration: 6.5s; }
+.rain-column:nth-child(8) { left: 40%; animation-duration: 8.5s; }
+.rain-column:nth-child(9) { left: 45%; animation-duration: 5.2s; }
+.rain-column:nth-child(10) { left: 50%; animation-duration: 7.2s; }
+.rain-column:nth-child(11) { left: 55%; animation-duration: 6.2s; }
+.rain-column:nth-child(12) { left: 60%; animation-duration: 8.2s; }
+.rain-column:nth-child(13) { left: 65%; animation-duration: 5.7s; }
+.rain-column:nth-child(14) { left: 70%; animation-duration: 7.7s; }
+.rain-column:nth-child(15) { left: 75%; animation-duration: 6.7s; }
+.rain-column:nth-child(16) { left: 80%; animation-duration: 8.7s; }
+.rain-column:nth-child(17) { left: 85%; animation-duration: 5.3s; }
+.rain-column:nth-child(18) { left: 90%; animation-duration: 7.3s; }
+.rain-column:nth-child(19) { left: 95%; animation-duration: 6.3s; }
+.rain-column:nth-child(20) { left: 97%; animation-duration: 8.3s; }
+
+/* Glowing orbs effect */
+.glowing-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -7;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.15;
+  animation: orb-float linear infinite;
+}
+
+@keyframes orb-float {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(10px, 10px); }
+  50% { transform: translate(0, 20px); }
+  75% { transform: translate(-10px, 10px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Generate 5 orbs with different positions, sizes, and colors */
+.orb:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at center, rgba(168, 85, 247, 0.8), rgba(168, 85, 247, 0));
+  animation-duration: 25s;
+}
+
+.orb:nth-child(2) {
+  top: 65%;
+  left: 75%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0));
+  animation-duration: 20s;
+}
+
+.orb:nth-child(3) {
+  top: 75%;
+  left: 25%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0));
+  animation-duration: 30s;
+}
+
+.orb:nth-child(4) {
+  top: 20%;
+  left: 80%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0));
+  animation-duration: 22s;
+}
+
+.orb:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.5), rgba(239, 68, 68, 0));
+  animation-duration: 35s;
+}
+
+/* Moving circuit patterns */
+.circuit-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -6;
+  opacity: 0.05;
+  background-size: 400px 400px;
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 l0 80 h60 v-20 h20 v20 h220 v-80 z M120 120 h20 v20 h-20 z M160 140 h20 v20 h-20 z M220 60 h20 v20 h-20 z M260 100 h20 v20 h-20 z M300 20 h20 v20 h-20 z M40 160 l0 40 h40 v-40 z M120 200 l0 200 h160 v-60 h-20 v40 h-120 v-160 h80 v20 h20 v-40 z' fill='none' stroke='%23a855f7' stroke-width='2'/%3E%3C/svg%3E");
+  animation: circuit-move 120s linear infinite;
+}
+
+@keyframes circuit-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 400px;
+  }
+}
+
+/* Horizontal scanlines */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 136, 0.03) 2px,
+    rgba(0, 255, 136, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* Moving glow effect */
+.glow-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(168, 85, 247, 0) 25%,
+    rgba(168, 85, 247, 0.03) 50%,
+    rgba(168, 85, 247, 0) 75%,
+    transparent 100%
+  );
+  animation: glow-sweep 15s linear infinite;
+  z-index: -4;
+}
+
+@keyframes glow-sweep {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(33.33%);
+  }
+}
+
+/* Floating particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.3;
+  animation: particle-float linear infinite;
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-100vh) translateX(20px); }
+}
+
+/* Generate 25 particles with different positions and animation speeds */
+.particle:nth-child(1) { left: 5%; top: 90%; animation-duration: 60s; }
+.particle:nth-child(2) { left: 10%; top: 95%; animation-duration: 75s; }
+.particle:nth-child(3) { left: 15%; top: 80%; animation-duration: 65s; }
+.particle:nth-child(4) { left: 20%; top: 85%; animation-duration: 80s; }
+.particle:nth-child(5) { left: 25%; top: 90%; animation-duration: 70s; }
+.particle:nth-child(6) { left: 30%; top: 95%; animation-duration: 85s; }
+.particle:nth-child(7) { left: 35%; top: 80%; animation-duration: 62s; }
+.particle:nth-child(8) { left: 40%; top: 85%; animation-duration: 77s; }
+.particle:nth-child(9) { left: 45%; top: 90%; animation-duration: 67s; }
+.particle:nth-child(10) { left: 50%; top: 95%; animation-duration: 82s; }
+.particle:nth-child(11) { left: 55%; top: 80%; animation-duration: 72s; }
+.particle:nth-child(12) { left: 60%; top: 85%; animation-duration: 87s; }
+.particle:nth-child(13) { left: 65%; top: 90%; animation-duration: 64s; }
+.particle:nth-child(14) { left: 70%; top: 95%; animation-duration: 79s; }
+.particle:nth-child(15) { left: 75%; top: 80%; animation-duration: 69s; }
+.particle:nth-child(16) { left: 80%; top: 85%; animation-duration: 84s; }
+.particle:nth-child(17) { left: 85%; top: 90%; animation-duration: 61s; }
+.particle:nth-child(18) { left: 90%; top: 95%; animation-duration: 76s; }
+.particle:nth-child(19) { left: 95%; top: 80%; animation-duration: 66s; }
+.particle:nth-child(20) { left: 12%; top: 92%; animation-duration: 81s; }
+.particle:nth-child(21) { left: 17%; top: 87%; animation-duration: 71s; }
+.particle:nth-child(22) { left: 22%; top: 82%; animation-duration: 86s; }
+.particle:nth-child(23) { left: 27%; top: 97%; animation-duration: 63s; }
+.particle:nth-child(24) { left: 32%; top: 92%; animation-duration: 78s; }
+.particle:nth-child(25) { left: 37%; top: 87%; animation-duration: 68s; }
+
+/* Cyberpunk data stream effect */
+.data-stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  opacity: 0.2;
+}
+
+.stream {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #00ff88, transparent);
+  animation: stream-flow linear infinite;
+}
+
+@keyframes stream-flow {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+/* Generate 15 data streams with different positions and animation speeds */
+.stream:nth-child(1) { left: 10%; animation-duration: 4s; animation-delay: 0s; }
+.stream:nth-child(2) { left: 20%; animation-duration: 6s; animation-delay: 1s; }
+.stream:nth-child(3) { left: 30%; animation-duration: 5s; animation-delay: 2s; }
+.stream:nth-child(4) { left: 40%; animation-duration: 7s; animation-delay: 0.5s; }
+.stream:nth-child(5) { left: 50%; animation-duration: 4.5s; animation-delay: 1.5s; }
+.stream:nth-child(6) { left: 60%; animation-duration: 6.5s; animation-delay: 2.5s; }
+.stream:nth-child(7) { left: 70%; animation-duration: 5.5s; animation-delay: 0.2s; }
+.stream:nth-child(8) { left: 80%; animation-duration: 7.5s; animation-delay: 1.2s; }
+.stream:nth-child(9) { left: 90%; animation-duration: 4.2s; animation-delay: 2.2s; }
+.stream:nth-child(10) { left: 15%; animation-duration: 6.2s; animation-delay: 0.7s; }
+.stream:nth-child(11) { left: 25%; animation-duration: 5.2s; animation-delay: 1.7s; }
+.stream:nth-child(12) { left: 35%; animation-duration: 7.2s; animation-delay: 2.7s; }
+.stream:nth-child(13) { left: 45%; animation-duration: 4.7s; animation-delay: 0.3s; }
+.stream:nth-child(14) { left: 55%; animation-duration: 6.7s; animation-delay: 1.3s; }
+.stream:nth-child(15) { left: 65%; animation-duration: 5.7s; animation-delay: 2.3s; }
+
+/* Pulse animation for the whole background (subtle) */
+.pulse-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: transparent;
+  animation: background-pulse 10s ease-in-out infinite;
+}
+
+@keyframes background-pulse {
+  0%, 100% {
+    box-shadow: inset 0 0 100px rgba(168, 85, 247, 0);
+  }
+  50% {
+    box-shadow: inset 0 0 100px rgba(168, 85, 247, 0.05);
+  }
+}
+
+/* Performance optimizations for weaker devices */
+@media (prefers-reduced-motion), (max-width: 768px) {
+  .rain-column {
+    display: none;
+  }
+  
+  .particle {
+    animation-duration: 120s !important;
+  }
+  
+  .orb {
+    animation-duration: 60s !important;
+  }
+  
+  .stream {
+    animation-duration: 10s !important;
+  }
+  
+  .glow-effect {
+    animation-duration: 30s !important;
+  }
+  
+  .circuit-pattern {
+    animation-duration: 240s !important;
+  }
+}
+
+/* Full background component wrapper function */
+.school-dashboard-container {
+  position: relative;
+}

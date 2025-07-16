@@ -1,0 +1,190 @@
+/* src/styles/GameStyles.css */
+
+/* Animation for ML progress indicator */
+@keyframes progress-animate {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Animation specific class */
+.progress-bar-animated {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+  animation: progress-animate 1.5s ease-in-out infinite;
+}
+
+.game-container {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating particles overlay */
+.game-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  animation: particles 4s linear infinite;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+@keyframes particles {
+  0% {
+    background-position: 0 0, 40px 60px, 130px 270px;
+  }
+  100% {
+    background-position: -550px 550px, -350px 350px, -250px 250px;
+  }
+}
+
+/* Make sure the game content is above the background */
+.game-container > canvas {
+  position: relative;
+  z-index: 2;
+  background-color: transparent !important;
+}
+
+/* Alternative animated background - cosmic theme */
+.cosmic-theme {
+  background: linear-gradient(to bottom, #000428, #004e92);
+  background-size: 200% 200%;
+  animation: cosmic-pulse 10s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes cosmic-pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.cosmic-theme::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='1'%3E%3Ccircle cx='400' cy='400' r='1'/%3E%3Ccircle cx='500' cy='300' r='1.5'/%3E%3Ccircle cx='200' cy='500' r='1'/%3E%3Ccircle cx='650' cy='250' r='1'/%3E%3Ccircle cx='150' cy='350' r='1.5'/%3E%3Ccircle cx='300' cy='100' r='1'/%3E%3Ccircle cx='700' cy='700' r='1'/%3E%3Ccircle cx='200' cy='100' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+  animation: stars 120s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes stars {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fun animated math background */
+.math-theme {
+  background-color: #3a86ff;
+  background-image: 
+    linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.math-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.12'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: math-symbols 60s linear infinite;
+  z-index: 1;
+}
+
+@keyframes math-symbols {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 1000px 0, -1000px 0;
+  }
+}
+
+/* Neural network theme */
+.neural-theme {
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+  overflow: hidden;
+}
+
+.neural-theme::before,
+.neural-theme::after {
+  content: '';
+  position: absolute;
+  width: 200vw;
+  height: 200vh;
+  top: -50vh;
+  left: -50vw;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%238B5CF6' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%2334D399'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  animation: neural 120s linear infinite;
+}
+
+.neural-theme::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23d23d69' fill-opacity='0.2'%3E%3Cpath d='M100 15v-9l-9 1v8l9 0zm0 0v9l9 1v-9l-9-1zm-27 6l-1-7-7 2v7l8-2zm27 0l1-7 7 2v7l-8-2zm-27 0l1 7-8 2v-7l7-2zm27 0l-1 7 8 2v-7l-7-2zm-28 7l-5-5-5 5 5 4 5-4zm29 0l5-5 5 5-5 4-5-4zm-47-1l-3-6-4 6 3 5 4-5zm65 0l3-6 4 6-3 5-4-5zm-65 0l3 5-5 4-2-6 4-3zm65 0l-3 5 5 4 2-6-4-3zM8 25l1-6 6 2-1 6-6-2zm85 0l-1-6-6 2 1 6 6-2zm85 0l-1-6-6 2 1 6 6-2zM8 25l-1 6-6-2 1-6 6 2zm85 0l1 6 6-2-1-6-6 2zm85 0l1 6 6-2-1-6-6 2zM8 31l4-4 4 5-4 4-4-5zm85 0l4-4 4 5-4 4-4-5zm85 0l4-4 4 5-4 4-4-5zM8 31l-4 5-3-6 4-4 3 5zm85 0l-4 5-3-6 4-4 3 5zm85 0l-4 5-3-6 4-4 3 5zM9 36l6-1 1 7-6 1-1-7zm85 0l6-1 1 7-6 1-1-7zm85 0l6-1 1 7-6 1-1-7zM9 36l-6 1-1-7 6-1 1 7zm85 0l-6 1-1-7 6-1 1 7zm85 0l-6 1-1-7 6-1 1 7zM1 13h5v10H1V13zm5 0h5v10H6V13zm5 0h5v10h-5V13zm5 0h5v10h-5V13zm5 0h5v10h-5V13zm5 0h5v10h-5V13zm5 0h5v10h-5V13zm5 0h5v10h-5V13zm30 0h5v10h-5V13zm30 0h5v10h-5V13zm30 0h5v10h-5V13zm30 0h5v10h-5V13zm30 0h5v10h-5V13z'/%3E%3Cpath opacity='.5' fill='url(%23a)' d='M1 13h190v10H1z'/%3E%3Cpath opacity='.5' fill='url(%23b)' d='M1 123h190v10H1z'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.2;
+  animation: neural 180s linear infinite reverse;
+}
+
+@keyframes neural {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(-500px) rotate(360deg);
+  }
+}
+
+/* Make sure game content appears above background effects */
+canvas, .game-container > * {
+  position: relative;
+  z-index: 5;
+}

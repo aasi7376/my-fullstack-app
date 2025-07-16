@@ -1,0 +1,278 @@
+/* CyberpunkPurple.css */
+/* Purple variant of the cyberpunk theme for school dashboard */
+
+:root {
+  /* Purple Cyberpunk color palette */
+  --cyber-black: #0f0f12;
+  --cyber-darkpurple: #190a23;
+  --cyber-purple: #2d1b40;
+  --cyber-neon-purple: #a855f7;
+  --cyber-bright-purple: #7c3aed;
+  --cyber-magenta: #d946ef;
+  --cyber-lavender: #c084fc;
+  
+  /* Transparency variants */
+  --cyber-purple-90: rgba(45, 27, 64, 0.9);
+  --cyber-purple-80: rgba(45, 27, 64, 0.8);
+  --cyber-purple-50: rgba(45, 27, 64, 0.5);
+  
+  /* Gradients */
+  --cyber-gradient-purple: linear-gradient(135deg, #2d1b40 0%, #190a23 100%);
+  --cyber-gradient-neon: linear-gradient(90deg, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0));
+  
+  /* Effects */
+  --cyber-purple-glow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(168, 85, 247, 0.4);
+  --cyber-purple-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  --cyber-purple-border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Purple Theme Overrides */
+.cyberpunk-purple {
+  background: var(--cyber-darkpurple);
+  color: white;
+}
+
+/* Purple Theme Headings */
+.cyberpunk-purple .cyberpunk-heading::after {
+  background: var(--cyber-neon-purple);
+  box-shadow: 0 0 10px var(--cyber-neon-purple);
+}
+
+.cyberpunk-purple .cyberpunk-code-text {
+  color: var(--cyber-neon-purple);
+  background: rgba(168, 85, 247, 0.1);
+}
+
+/* Purple Theme Cards */
+.cyberpunk-purple .cyberpunk-card {
+  background: rgba(45, 27, 64, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+.cyberpunk-purple .cyberpunk-card::before {
+  background: linear-gradient(90deg, transparent, var(--cyber-neon-purple), transparent);
+}
+
+.cyberpunk-purple .cyberpunk-card:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Purple Theme Buttons */
+.cyberpunk-purple .cyberpunk-button {
+  color: var(--cyber-neon-purple);
+  border: 1px solid var(--cyber-neon-purple);
+}
+
+.cyberpunk-purple .cyberpunk-button::before {
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+}
+
+.cyberpunk-purple .cyberpunk-button:hover {
+  background: rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Purple Theme Form Elements */
+.cyberpunk-purple .cyberpunk-input {
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.cyberpunk-purple .cyberpunk-input:focus {
+  border-color: var(--cyber-neon-purple);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+.cyberpunk-purple .cyberpunk-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.cyberpunk-purple .cyberpunk-select:focus {
+  border-color: var(--cyber-neon-purple);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+/* Purple Theme Tables */
+.cyberpunk-purple .cyberpunk-table th {
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--cyber-neon-purple);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.cyberpunk-purple .cyberpunk-table tr:hover td {
+  background: rgba(168, 85, 247, 0.05);
+}
+
+/* Purple Theme Progress Bar */
+.cyberpunk-purple .cyberpunk-progress {
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.cyberpunk-purple .cyberpunk-progress-bar {
+  background: linear-gradient(90deg, var(--cyber-neon-purple), rgba(168, 85, 247, 0.5));
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+/* Purple Theme Badge */
+.cyberpunk-purple .cyberpunk-badge {
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--cyber-neon-purple);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Custom components with purple theme */
+.cyberpunk-purple .stat-card {
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cyberpunk-purple .stat-card:hover {
+  border-color: var(--cyber-neon-purple);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+/* Dashboard elements with purple theme */
+.cyberpunk-purple .sidebar {
+  background: rgba(25, 10, 35, 0.95);
+  border-right: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+.cyberpunk-purple .sidebar-link.active {
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.15), transparent);
+  color: var(--cyber-neon-purple);
+  border-left: 3px solid var(--cyber-neon-purple);
+}
+
+/* Card themes for different metrics */
+.cyberpunk-purple .metric-primary {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.cyberpunk-purple .metric-secondary {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.cyberpunk-purple .metric-success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.cyberpunk-purple .metric-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.cyberpunk-purple .metric-danger {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Glitch effect for important elements */
+.cyberpunk-purple .glitch-text {
+  position: relative;
+  color: var(--cyber-neon-purple);
+  text-shadow: 0 0 5px var(--cyber-neon-purple);
+  animation: glitch-text 3s infinite;
+}
+
+@keyframes glitch-text {
+  0% {
+    text-shadow: 0 0 5px var(--cyber-neon-purple);
+  }
+  2% {
+    text-shadow: 2px 0 5px var(--cyber-magenta), -2px 0 5px var(--cyber-lavender);
+    transform: translate(1px, 0);
+  }
+  4% {
+    text-shadow: -2px 0 5px var(--cyber-magenta), 2px 0 5px var(--cyber-lavender);
+    transform: translate(-1px, 0);
+  }
+  6% {
+    text-shadow: 0 0 5px var(--cyber-neon-purple);
+    transform: translate(0, 0);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--cyber-neon-purple);
+  }
+}
+
+/* Cyberpunk pulse effect for notifications */
+.cyberpunk-purple .notification-pulse {
+  position: relative;
+}
+
+.cyberpunk-purple .notification-pulse::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cyber-magenta);
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  animation: pulse-purple 2s infinite;
+}
+
+@keyframes pulse-purple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 70, 239, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(217, 70, 239, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 70, 239, 0);
+  }
+}
+
+/* Data grid with purple theme */
+.cyberpunk-purple .data-grid {
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cyberpunk-purple .data-grid-header {
+  background: rgba(168, 85, 247, 0.1);
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.cyberpunk-purple .data-grid-row {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+  transition: all 0.2s ease;
+}
+
+.cyberpunk-purple .data-grid-row:hover {
+  background: rgba(168, 85, 247, 0.05);
+}
+
+/* Profile section with purple theme */
+.cyberpunk-purple .profile-header {
+  background: rgba(168, 85, 247, 0.05);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  margin-bottom: 2rem;
+}
+
+.cyberpunk-purple .profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyber-neon-purple), var(--cyber-magenta));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  margin-right: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}

@@ -1,0 +1,308 @@
+/* CyberpunkTheme.css */
+/* Core cyberpunk theme styling for the school dashboard */
+
+:root {
+  /* Cyberpunk color palette */
+  --cyber-black: #0f0f12;
+  --cyber-darkblue: #0f172a;
+  --cyber-blue: #1e293b;
+  --cyber-neon: #00fffc;
+  --cyber-pink: #ff00ff;
+  --cyber-yellow: #ffff00;
+  --cyber-green: #00ff41;
+  
+  /* Transparency variants */
+  --cyber-black-90: rgba(15, 15, 18, 0.9);
+  --cyber-black-80: rgba(15, 15, 18, 0.8);
+  --cyber-black-50: rgba(15, 15, 18, 0.5);
+  
+  /* Gradients */
+  --cyber-gradient-dark: linear-gradient(135deg, var(--cyber-darkblue) 0%, var(--cyber-blue) 100%);
+  --cyber-gradient-glow: linear-gradient(90deg, rgba(0, 255, 252, 0), rgba(0, 255, 252, 0.2), rgba(0, 255, 252, 0));
+  
+  /* Effects */
+  --cyber-glow: 0 0 10px rgba(0, 255, 252, 0.8), 0 0 20px rgba(0, 255, 252, 0.4);
+  --cyber-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  --cyber-border: 1px solid rgba(0, 255, 252, 0.3);
+  
+  /* Transitions */
+  --cyber-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Global Cyberpunk Styles */
+.cyberpunk-theme {
+  background: var(--cyber-darkblue);
+  color: white;
+  font-family: 'Inter', 'Roboto Mono', monospace, sans-serif;
+}
+
+/* Cyberpunk Typography */
+.cyberpunk-heading {
+  font-family: 'Rajdhani', 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.cyberpunk-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--cyber-neon);
+  box-shadow: 0 0 10px var(--cyber-neon);
+}
+
+.cyberpunk-subheading {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.cyberpunk-code-text {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--cyber-neon);
+  background: rgba(0, 255, 252, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Cyberpunk Cards */
+.cyberpunk-card {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 252, 0.1);
+  transition: var(--cyber-transition);
+}
+
+.cyberpunk-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyber-neon), transparent);
+  animation: cyber-scan 3s linear infinite;
+}
+
+.cyberpunk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 255, 252, 0.3);
+}
+
+/* Cyberpunk Buttons */
+.cyberpunk-button {
+  background: var(--cyber-black);
+  color: var(--cyber-neon);
+  border: 1px solid var(--cyber-neon);
+  padding: 0.8rem 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--cyber-transition);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cyberpunk-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 252, 0.2), transparent);
+  transition: var(--cyber-transition);
+}
+
+.cyberpunk-button:hover {
+  background: rgba(0, 255, 252, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 252, 0.5);
+}
+
+.cyberpunk-button:hover::before {
+  left: 100%;
+  transition: 0.7s;
+}
+
+/* Cyberpunk Form Elements */
+.cyberpunk-input {
+  background: rgba(15, 15, 18, 0.7);
+  border: 1px solid rgba(0, 255, 252, 0.2);
+  color: white;
+  padding: 0.8rem;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 4px;
+  transition: var(--cyber-transition);
+}
+
+.cyberpunk-input:focus {
+  outline: none;
+  border-color: var(--cyber-neon);
+  box-shadow: 0 0 8px rgba(0, 255, 252, 0.4);
+}
+
+.cyberpunk-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cyberpunk-select {
+  appearance: none;
+  background: rgba(15, 15, 18, 0.7);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300fffc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 0.8em auto;
+  border: 1px solid rgba(0, 255, 252, 0.2);
+  color: white;
+  padding: 0.8rem;
+  padding-right: 2rem;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 4px;
+  transition: var(--cyber-transition);
+}
+
+.cyberpunk-select:focus {
+  outline: none;
+  border-color: var(--cyber-neon);
+  box-shadow: 0 0 8px rgba(0, 255, 252, 0.4);
+}
+
+/* Cyberpunk Tables */
+.cyberpunk-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(15, 15, 18, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cyberpunk-table th {
+  background: rgba(0, 255, 252, 0.1);
+  color: var(--cyber-neon);
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0, 255, 252, 0.2);
+}
+
+.cyberpunk-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--cyber-transition);
+}
+
+.cyberpunk-table tr:hover td {
+  background: rgba(0, 255, 252, 0.05);
+}
+
+.cyberpunk-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Cyberpunk Progress Bar */
+.cyberpunk-progress {
+  height: 10px;
+  background: rgba(15, 15, 18, 0.7);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 252, 0.2);
+}
+
+.cyberpunk-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyber-neon), rgba(0, 255, 252, 0.5));
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 255, 252, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunk-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: cyber-progress 1.5s linear infinite;
+}
+
+/* Cyberpunk Badge */
+.cyberpunk-badge {
+  display: inline-block;
+  background: rgba(0, 255, 252, 0.1);
+  color: var(--cyber-neon);
+  border: 1px solid rgba(0, 255, 252, 0.3);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunk-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 252, 0.2), transparent);
+  transition: var(--cyber-transition);
+}
+
+.cyberpunk-badge:hover::before {
+  left: 100%;
+  transition: 0.7s;
+}
+
+/* Animations */
+@keyframes cyber-scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes cyber-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes cyber-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 252, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 10px 10px rgba(0, 255, 252, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 252, 0);
+  }
+}

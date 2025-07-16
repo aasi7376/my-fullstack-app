@@ -1,0 +1,305 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Direct Cyberpunk Profile Styling - Apply this to fix your profile page
+   This CSS uses more direct selectors that will override existing styles
+──────────────────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Apply to all elements to ensure our styles take precedence */
+body, html, div, h1, h2, h3, h4, h5, h6, p, span, label, input, 
+select, textarea, button, section, form {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Root variables for cyberpunk theme */
+:root {
+  --bg-dark: #0d0d0d;
+  --grid-line: rgba(255,255,255,0.05);
+  --neon-pink: #ff2994;
+  --neon-cyan: #00e5ff;
+  --neon-green: #39ff14;
+  --neon-purple: #b967ff;
+  --accent: var(--neon-cyan);
+  --text-main: #ececec;
+  --font-pixel: 'Press Start 2P', cursive;
+  --danger: #ff2b4e;
+  --success: #39ff14;
+  --warning: #FFD166;
+  --card-bg: rgba(0,0,0,0.7);
+}
+
+/* Main background - this will apply to any container */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply grid background to any main container */
+body > div, 
+[class*="dashboard"], 
+[class*="container"], 
+[class*="content"],
+[class*="profile"],
+main {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--text-main);
+}
+
+/* Targeting headings inside sections - like "Security" and "Notification Preferences" */
+h2, h3, 
+[class*="title"],
+[class*="header"] h1,
+[class*="header"] h2,
+[class*="header"] h3 {
+  font-family: var(--font-pixel) !important;
+  color: var(--neon-cyan) !important;
+  text-shadow: 0 0 10px var(--neon-cyan) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* Add underline effect to headings */
+h2::after, h3::after,
+[class*="title"]::after,
+[class*="header"] h1::after,
+[class*="header"] h2::after,
+[class*="header"] h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), transparent);
+  box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* Target all sections in the profile area */
+[class*="security"],
+[class*="notification"],
+section,
+form > div {
+  background-color: rgba(0,0,0,0.7) !important;
+  border: 1px solid var(--grid-line) !important;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+  margin-top: 1rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add scanline effect to sections */
+[class*="security"]::before,
+[class*="notification"]::before,
+section::before,
+form > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02) 0,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  border-radius: 7px;
+  z-index: 0;
+}
+
+/* Target all labels in forms */
+label,
+[class*="label"] {
+  font-size: 0.8rem !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--neon-pink) !important;
+  text-shadow: 0 0 5px rgba(255, 41, 148, 0.5) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+/* Target all inputs, textareas, and selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  background-color: rgba(0,0,0,0.5) !important;
+  border: 1px solid var(--grid-line) !important;
+  border-radius: 6px !important;
+  color: var(--text-main) !important;
+  padding: 0.75rem !important;
+  font-size: 0.9rem !important;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5) !important;
+  width: 100% !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Focus and hover states for inputs */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus,
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover,
+select:hover,
+textarea:hover {
+  outline: none !important;
+  border-color: var(--neon-purple) !important;
+  box-shadow: 0 0 10px rgba(185, 103, 255, 0.5), inset 0 2px 5px rgba(0,0,0,0.5) !important;
+}
+
+/* Checkbox styling - this targets any checkbox regardless of its class */
+input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  background-color: rgba(0,0,0,0.5) !important;
+  border: 1px solid var(--grid-line) !important;
+  border-radius: 4px !important;
+  margin-right: 0.75rem !important;
+  cursor: pointer !important;
+  position: relative !important;
+  vertical-align: middle !important;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgba(185, 103, 255, 0.3) !important;
+  border-color: var(--neon-purple) !important;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓' !important;
+  position: absolute !important;
+  color: var(--neon-purple) !important;
+  font-size: 0.9rem !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  text-shadow: 0 0 5px var(--neon-purple) !important;
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--neon-purple) !important;
+  box-shadow: 0 0 5px rgba(185, 103, 255, 0.3) !important;
+}
+
+/* Target checkbox labels specifically */
+input[type="checkbox"] + label,
+label[for*="checkbox"],
+label[for*="Notifications"] {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  font-size: 0.9rem !important;
+  cursor: pointer !important;
+  color: var(--text-main) !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* Target all buttons */
+button,
+[class*="button"],
+[type="button"],
+[type="submit"] {
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  background-color: transparent !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: bold !important;
+}
+
+/* Target cancel/back buttons */
+button[class*="cancel"],
+[class*="cancel"],
+[class*="back"] {
+  color: var(--text-main) !important;
+  border: 1px solid var(--grid-line) !important;
+  background-color: transparent !important;
+}
+
+button[class*="cancel"]:hover,
+[class*="cancel"]:hover,
+[class*="back"]:hover {
+  border-color: var(--neon-pink) !important;
+  box-shadow: 0 0 10px rgba(255, 41, 148, 0.3) !important;
+  color: var(--neon-pink) !important;
+  text-shadow: 0 0 5px rgba(255, 41, 148, 0.5) !important;
+}
+
+/* Target save/submit buttons */
+button[class*="save"],
+[class*="save"],
+[type="submit"],
+button[class*="primary"],
+[class*="primary"] {
+  background-color: rgba(185, 103, 255, 0.3) !important;
+  color: var(--neon-purple) !important;
+  border: 1px solid var(--neon-purple) !important;
+  box-shadow: 0 0 10px rgba(185, 103, 255, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+button[class*="save"]::before,
+[class*="save"]::before,
+[type="submit"]::before,
+button[class*="primary"]::before,
+[class*="primary"]::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -50% !important;
+  left: -50% !important;
+  width: 200% !important;
+  height: 200% !important;
+  background: linear-gradient(
+    transparent,
+    rgba(185, 103, 255, 0.1),
+    transparent
+  ) !important;
+  transform: rotate(45deg) !important;
+  animation: shimmer 3s infinite linear !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+button[class*="save"]:hover,
+[class*="save"]:hover,
+[type="submit"]:hover,
+button[class*="primary"]:hover,
+[class*="primary"]:hover {
+  background-color: rgba(185, 103, 255, 0.5) !important;
+  box-shadow: 0 0 15px rgba(185, 103, 255, 0.6) !important;
+  text-shadow: 0 0 10px var(--neon-purple) !important;
+}
